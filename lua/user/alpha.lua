@@ -22,9 +22,21 @@ dashboard.section.buttons.val = {
   dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
 local function footer()
-  return "chrisatmachine.com"
+  return "jiahuic.github.io"
 end
 
+predefined_quotes = {
+    "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.", '', '- Brian Kernighan'
+}
+
+-- a function to return a random quote from predefined_quotes
+local function get_quote()
+  local quote = predefined_quotes[math.random(#predefined_quotes)]
+  return quote
+end
+
+
+-- dashboard.section.footer.val = get_quote()
 dashboard.section.footer.val = footer()
 
 dashboard.section.footer.opts.hl = "Type"
